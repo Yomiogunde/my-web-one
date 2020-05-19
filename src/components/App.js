@@ -10,11 +10,12 @@ import Title from './Title';
 
 class App extends Component {
 
-  state = { displayBio: true };
+   state = { displayBio: false };
 
   toggleDisplayBio = () => {
     this.setState({ displayBio: !this.state.displayBio });
   }
+
 
   render() {
     return (

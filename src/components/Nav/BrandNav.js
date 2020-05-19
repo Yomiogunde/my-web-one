@@ -7,7 +7,9 @@ import portrait from '../../assets/img/portrait.jpg';
 const Nav = styled.nav`
 position: fixed;
 top: 0;
+left:0;
 width:100%;
+z-index:  ${({ open }) => open ?"0": "-100"};
 
 .logo {
     display: flex;
@@ -31,6 +33,7 @@ ul {
     flex-flow: column wrap;
     align-items: center;
     transform: ${({ open }) => open ? 'translate(0)' : 'translateY(-100%)'};
+    transition-delay: 0.4s,
     transition: transform 1s ease-out;
     justify-content: center;
     float: left;
@@ -62,7 +65,7 @@ ul {
 
 `;
 
-
+//conditional  render
 const BrandNav = ({ open }) => {
     return (
        <Nav open={open}>
@@ -76,8 +79,6 @@ const BrandNav = ({ open }) => {
             <li>Contact</li>
            </ul>
        </Nav>
-    
-   
     )
 }
 
